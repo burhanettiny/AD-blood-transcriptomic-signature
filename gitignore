@@ -1,0 +1,14 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Büyük, otomatik üretilen çıktılar (script tekrar çalıştırılınca yeniden üretilir)
+*.png
+*.pdf
+AD_analysis_workspace.RData
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
