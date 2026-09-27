@@ -49,7 +49,8 @@ Running the full script will:
 5. Perform external validation using a **frozen-reference (discovery-only) quantile normalization** scheme, so that the trained model can be applied to new, independently profiled samples — including a single new patient — without access to the full external cohort
 6. Score MCI individuals for AD-like molecular resemblance
 7. Run Gene Ontology enrichment analysis on the signature
-8. Export all figures, supplementary tables, and a saved R workspace
+8. Test additional confounders (self-reported ethnicity, hybridization chip batch) and visualize sample structure via PCA
+9. Export all figures, supplementary tables, and a saved R workspace
 
 ## Reproducibility note
 
@@ -71,6 +72,8 @@ The frozen-reference target distribution is saved as `frozen_reference_target.rd
 | `Fig5_GO_dotplot.png` | GO Biological Process enrichment |
 | `Fig6_external_ROC_frozen.png` | External validation ROC curves (frozen-reference) |
 | `Fig_calibration_frozen.png` | Calibration plot, external cohort |
+| `Supplementary_Figure_2a_PCA_batch.png` | PCA of signature genes, colored by hybridization chip batch |
+| `Supplementary_Figure_2b_PCA_group.png` | PCA of signature genes, colored by disease status |
 | `Supplementary_Table_1.csv` | 100-gene signature with MDA importance, logFC, adjusted p-values |
 | `Table_3_MCI_Risk_frozen.csv` | Per-sample MCI risk scores and risk category |
 | `Bootstrap_stability_top10.csv` | Biomarker stability across 100 bootstrap resamples |
