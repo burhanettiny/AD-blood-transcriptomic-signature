@@ -37,7 +37,7 @@ install.packages(c("randomForest", "pROC", "e1071", "ggplot2", "dplyr", "pheatma
 ## Usage
 
 ```r
-source("AD_pipeline_FROZEN_REFERENCE_v2.R")
+source("AD_pipeline_FROZEN_REFERENCE_v3.R")
 ```
 
 Running the full script will:
@@ -72,8 +72,8 @@ The frozen-reference target distribution is saved as `frozen_reference_target.rd
 | `Fig5_GO_dotplot.png` | GO Biological Process enrichment |
 | `Fig6_external_ROC_frozen.png` | External validation ROC curves (frozen-reference) |
 | `Fig_calibration_frozen.png` | Calibration plot, external cohort |
-| `Supplementary_Figure_2a_PCA_batch.png` | PCA of signature genes, colored by hybridization chip batch |
-| `Supplementary_Figure_2b_PCA_group.png` | PCA of signature genes, colored by disease status |
+| `Fig_PCA_batch.png` | PCA of signature genes, colored by hybridization chip batch |
+| `Fig_PCA_group.png` | PCA of signature genes, colored by disease status |
 | `Supplementary_Table_1.csv` | 100-gene signature with MDA importance, logFC, adjusted p-values |
 | `Table_3_MCI_Risk_frozen.csv` | Per-sample MCI risk scores and risk category |
 | `Bootstrap_stability_top10.csv` | Biomarker stability across 100 bootstrap resamples |
