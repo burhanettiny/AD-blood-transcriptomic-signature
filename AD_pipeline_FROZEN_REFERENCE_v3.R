@@ -528,9 +528,9 @@ p_pca_batch <- ggplot(pca_df, aes(PC1, PC2, color = Batch)) + geom_point(size = 
   theme_minimal() + theme(legend.position = "none") +
   ggtitle("PCA - Chip batch'e gore renklendirme (legend gizli)")
 
-ggsave("Supplementary_Figure_2b_PCA_group.png", p_pca_group, width = 6, height = 5, dpi = 200)
-ggsave("Supplementary_Figure_2a_PCA_batch.png", p_pca_batch, width = 6, height = 5, dpi = 200)
-cat("\nSupplementary_Figure_2a/2b PNG dosyalari kaydedildi.\n")
+ggsave("Fig_PCA_group.png", p_pca_group, width = 6, height = 5, dpi = 200)
+ggsave("Fig_PCA_batch.png", p_pca_batch, width = 6, height = 5, dpi = 200)
+cat("\nFig_PCA_group.png ve Fig_PCA_batch.png kaydedildi.\n")
 
 ## ---- BLOCK 20: Mitokondriyal-ribozomal ko-regülasyon ----
 mito_genes <- c("NDUFA1", "NDUFS5", "ATP5ME", "ATP5F1E", "UQCRHL", "COX17")
@@ -549,7 +549,7 @@ supp1 <- top100 %>%
   arrange(MDA_Rank)
 write.csv(supp1, "Supplementary_Table_1.csv", row.names = FALSE)
 
-## ---- BLOCK 22: Her şeyin özeti ----
+## ---- BLOCK 22: SUMMARY ----
 cat("\n\n==================== FINAL SUMMARY ====================\n")
 cat("Discovery: AD=", sum(pheno_adctl$group == "AD"), " CTL=", sum(pheno_adctl$group == "CTL"), "\n")
 cat("Internal OOB AUC (discovery-only norm., Block 9/10 modeli):", round(auc(roc_rf_internal), 3), "\n")
@@ -562,7 +562,7 @@ cat("External AUC - RF:", round(auc(roc_rf_ext_j), 3), " SVM:", round(auc(roc_sv
 cat("MCI high-risk:", sum(mci_results$Category == "High Risk"), "/ 80\n")
 cat("Brier score:", round(brier_rf, 3), "\n")
 
-cat("\n---- [YENI] Frozen-reference normalization sonuclari (makalede raporlanacak) ----\n")
+cat("\n---- [YENI] Frozen-reference normalization sonuclari  ----\n")
 cat("External AUC - RF:", round(auc(roc_rf_ext_f), 3), " SVM:", round(auc(roc_svm_ext_f), 3),
     " GLM:", round(auc(roc_glm_ext_f), 3), "\n")
 cat("External RF 95% CI:", round(ci.auc(roc_rf_ext_f)[1], 3), "-", round(ci.auc(roc_rf_ext_f)[3], 3), "\n")
@@ -570,7 +570,7 @@ cat("MCI high-risk:", sum(mci_results_frozen$Category == "High Risk"), "/ 80\n")
 cat("Brier score:", round(brier_rf_f, 3), "\n")
 cat("Imza icindeki ortak probe sayisi:", length(common_probes_frozen), "/100\n")
 
-## ---- BLOCK 23: Çalışma alanını (workspace) kaydet -- İLERİDE TEKRAR AÇMAK İÇİN ----
+## ---- BLOCK 23: Çalışma alanını (workspace) kaydet ----
 save.image("AD_analysis_workspace.RData")
 cat("\nWorkspace kaydedildi:", file.path(getwd(), "AD_analysis_workspace.RData"), "\n")
 cat("Tekrar açmak için: load('", file.path(getwd(), "AD_analysis_workspace.RData"), "')\n", sep="")
